@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <title>HOIDiNi: Human-Object Interaction through Diffusion Noise Optimization</title>
+  <!-- Google tag (gtag.js) -->
+<!-- 
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EWRYSDM25P');
+</script>
+ -->
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+  <link rel="icon" href="static/figures/icon2.png">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+    <section class="publication-header">
+        <div class="hero-body">
+            <div class="container is-max-widescreen">
+                <!-- <div class="columns is-centered"> -->
+                <div class="column has-text-centered">
+                    <h1 class="title is-2 publication-title">HOIDiNi: <br>Human-Object Interaction through <br>Diffusion Noise Optimization</h1>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="publication-author-block">
+
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <!--
+                    to anonimyze:
+                    1. remove author names (till "..indicates equal...")
+                    2. change link to video.
+                    3. remove bibtex reference.
+-->
+
+
+
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <span class="link-block">
+                                    <a href="" target="_blank"
+                   class="external-link button is-normal is-rounded">
+                                    <!-- <a href="paper.pdf" target="_blank"
+                                        class="external-link button is-normal is-rounded"> -->
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+
+                                <span class="link-block">
+                                    <a href="https://github.com/hoidini/HOIDiNi" target="_blank"
+                                        class="external-link button is-normal is-rounded">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+
+                                <span class="link-block">
+                                    <a href="https://youtu.be/lN1260WEe7U" target="_blank"
+                                        class="external-link button is-normal is-rounded">
+                                        <span class="icon">
+                                            <i class="fab fa-youtube"></i>
+                                        </span>
+                                        <span>Video</span>
+                                    </a>
+                                </span>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section class="section hero is-light">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+
+                <div class="item">
+                    <p style="margin-bottom: 30px">
+<!--                        <span class="author-block">Single Motion Diffusion + Single Controller = Text-driven Multi-task Agent</span>
+                    <p style="margin-bottom: 30px"> -->
+                                <iframe width="720" height="405" src="https://www.youtube.com/embed/lN1260WEe7U?si=ehbiJlClPCpwFlJ5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </p>
+                </div>
+
+                <!-- <h2 class="title is-3">Abstract</h2> -->
+                <div class="content has-text-justified">
+                    <p>
+We present HOIDiNi, a text-driven diffusion framework for synthesizing realistic and plausible human-object interaction (HOI). HOI generation is extremely challenging since it induces strict contact accuracies alongside a diverse motion manifold. While current literature trades off between realism and physical correctness, HOIDiNi optimizes directly in the noise space of a pretrained diffusion model using Diffusion Noise Optimization (DNO), achieving both. This is made feasible thanks to our observation that the problem can be separated into two phases: an object-centric phase, primarily making discrete choices of hand-object contact locations, and a human-centric phase that refines the full-body motion to realize this blueprint. This structured approach allows for precise hand-object contact without compromising motion naturalness. Quantitative, qualitative, and subjective evaluations on the GRAB dataset alone clearly indicate HOIDiNi outperforms prior works and baselines in contact accuracy, physical validity, and overall quality. Our results demonstrate the ability to generate complex, controllable interactions, including grasping, placing, and full-body coordination, driven solely by textual prompts.
+                    </p>
+                </div>
+
+                <div class="column is-centered has-text-centered">
+
+
+                </div>
+            </div>
+        </div>
+        <!--/ Abstract. -->
+    </div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-centered has-text-centered">
+      <h2 class="title is-3 is-centered has-text-centered">Text-driven Object Interactions</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+
+      <div class="column is-centered has-text-centered">
+                <video poster="" id="tree" autoplay  muted loop height="100%">
+          <source src="static/figures/cup.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-centered has-text-centered">
+                <video poster="" id="tree" autoplay  muted height="100%">
+          <source src="static/figures/pan.mp4"
+          type="video/mp4">
+      </div>
+      <div class="column is-centered has-text-centered">
+                <video poster="" id="tree" autoplay  muted height="100%">
+          <source src="static/figures/bulb.mp4"
+          type="video/mp4">
+      </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="item">
+         <h2 class="title is-3">The Method</h2>
+         <div class="content has-text-justified">
+          <p>
+HOIDiNi is a text-driven diffusion framework that satisfies the tight constraints of HOI while remaining on the manifold of realistic human motion. 
+We address this challenge using an optimization strategy that, by design, preserves the learned motion distribution. Diffusion Noise Optimization (DNO), a test-time sampling method that traverses the noise space of a pretrained diffusion model to steer generation toward desired losses.
+Originally applied to control free-form motion synthesis, DNO proves to be a natural fit for HOI when carefully adapted to the structure and demands of the task.
+</p>
+<p>
+We begin by training a diffusion model, \modelname{}, to learn the joint distribution of full-body human motion and object trajectories, enabling coordinated interaction within a unified generative space. A key insight is that accurate HOI depends on identifying semantically meaningful contact pairs between the palm surface and the input object’s surface. Unlike prior methods that rely on heuristics, \modelname{} dynamically predicts these contacts for each frame in addition to full-body, fingers, and object trajectories, allowing precise, frame-consistent interaction that adapts to object shape and motion, resulting in more stable and realistic behaviors.
+</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/model.png" alt="model" width="520"/>
+      </div>
+
+</div>
+</div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="item">
+        <div class="content has-text-justified">
+          <p>
+As it turns out, diffusion noise optimization using DNO over this joint discrete/continuous space of Contact-Pairs, Human, and Object motions is challenging, with many local discontinuities that destabilize convergence. We observe that the complexity of HOI optimization can be separated into two optimization phases. 
+
+The first, Object-Centric phase considers the motion of the object and its contacts with the hands only, 
+forming a reliable structural blueprint for the ensuing full-body motion.
+
+This outline then guides the second, Human-Centric phase, which completes the full-body motion, refining finger articulation for precise grasping, and generating natural body posture that semantically supports the object’s behavior and dynamics.
+</p>
+          </div>
+          
+        </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/arch.jpg" alt="arch" width="1024"/>
+      </div>
+
+</div>
+</div>
+</section>
+
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="item">
+        <h2 class="title is-3 is-centered has-text-centered">Two-phase Motion Generation</h2>
+        <div class="content has-text-justified">
+The first phase generates object motion and the contact point pairs which lay the outline for generating the full motion.
+In the second phase, human motion is generated according to the predetermined contacts here of passing a ball from one hand to another.
+    </div>
+  </div>
+</div></div></div>
+</section>
+
+<section class="hero is-small">
+      <div class="column is-centered has-text-centered">
+        <video poster="" id="tree" autoplay  muted loop width="1024">
+          <source src="static/figures/phase1.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+</section>
+
+<section class="hero is-small">
+      <div class="column is-centered has-text-centered">
+        <video poster="" id="tree" autoplay  muted loop width="1024">
+          <source src="static/figures/phase2.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+          <p>
+HOIDiNi generates precise interactions with millimeter level accuracy, successfully handling delicate tasks like manipulating balls of different sizes or a pyramid.
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+
+
+<section class="hero is-small">
+      <div class="column is-centered has-text-centered">
+        <video poster="" id="tree" autoplay  muted loop width="1024">
+          <source src="static/figures/results1.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+Note how Houdini yields physically plausible results that also mimic tasks specific human-like nuances.
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+
+
+<section class="hero is-small">
+      <div class="column is-centered has-text-centered">
+        <video poster="" id="tree" autoplay  muted loop width="1024">
+          <source src="static/figures/results2.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Comparisons</h2>
+        <div class="content has-text-justified">
+          <p>
+Compared to other baselines, the competing optimization scheme employed by IMOS [Ghosh et al. 2023] pulls generation to poor contacts and unrealistic motions.
+Applying our laws to a classified guidance baseline does not satisfy constraints closely enough, and using the popular nearest neighbor heuristic for contact pairs instead of our predictions fails to find semantically correct contacts.
+In contrast, HOIDiNi demonstrates pleasing and physically plausible results.
+
+
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+
+
+<section class="hero is-small">
+      <div class="column is-centered has-text-centered">
+        <video poster="" id="tree" autoplay  muted loop width="1024">
+          <source src="static/figures/compare.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+</section>
+
+
+
+
+
+
+
+<footer class="footer">
+ <!--  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+      href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
+      <i class="fas fa-file-pdf"></i>
+    </a>
+    <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <i class="fab fa-github"></i>
+    </a>
+  </div> -->
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          This website is licensed under a <a rel="license"
+          href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+        Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+      <p>
+        Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page. If you want to reuse their <a
+        href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them appropriately.
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+</footer>
+
+
+  <script type="text/javascript">
+    var sc_project=12351448; 
+    var sc_invisible=1; 
+    var sc_security="c676de4f"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img
+    class="statcounter"
+    src="https://c.statcounter.com/12351448/0/c676de4f/1/"
+    alt="Web Analytics"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
