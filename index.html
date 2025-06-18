@@ -194,7 +194,7 @@ We address this challenge using an optimization strategy that, by design, preser
 Originally applied to control free-form motion synthesis, DNO proves to be a natural fit for HOI when carefully adapted to the structure and demands of the task.
 </p>
 <p>
-We begin by training a diffusion model, \modelname{}, to learn the joint distribution of full-body human motion and object trajectories, enabling coordinated interaction within a unified generative space. A key insight is that accurate HOI depends on identifying semantically meaningful contact pairs between the palm surface and the input object’s surface. Unlike prior methods that rely on heuristics, \modelname{} dynamically predicts these contacts for each frame in addition to full-body, fingers, and object trajectories, allowing precise, frame-consistent interaction that adapts to object shape and motion, resulting in more stable and realistic behaviors.
+We begin by training a diffusion model, CPHOI, to learn the joint distribution of full-body human motion and object trajectories, enabling coordinated interaction within a unified generative space. A key insight is that accurate HOI depends on identifying semantically meaningful contact pairs between the palm surface and the input object’s surface. Unlike prior methods that rely on heuristics, CPHOI dynamically predicts these contacts for each frame in addition to full-body, fingers, and object trajectories, allowing precise, frame-consistent interaction that adapts to object shape and motion, resulting in more stable and realistic behaviors.
 </p>
         </div>
       </div>
